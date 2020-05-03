@@ -1,6 +1,9 @@
 # Doubly Circular Linked List
 
 ## Node
+    Double Linked List에서는 List의 앞 또는 뒤를 가르키는 포인터가 필요하다. 
+  
+  <img src = "./img/node.png" width="40%">
 
 ## 1. Insert
 #### 1) 리스트의 가장 앞에 삽입
