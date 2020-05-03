@@ -10,8 +10,8 @@ Doubly Circular Linked List
 ### 1) 리스트의 가장 앞에 삽입
 #### 1. 리스트가 비었을 경우
 
-##### (1) input으로 들어온 값을 가지는 새로운 노드를 만든다. (수정 요함)
-<img src = "./img/i_1.png" width="20%">
+##### (1) input으로 들어온 값을 가지는 새로운 노드를 만든다.
+<img src = "./img/i_0.png" width="20%">
 
 ##### (2) previous node를 가르키는 포인터를 자신의 주소를 가르키도록 만든다.
 <img src = "./img/i_2.png" width="20%">
