@@ -42,12 +42,6 @@ public class CircularDoublyLinkedList<T> implements ICircularDoubleLinkedList<T>
     public void insertAfter(T target, T data) {
         DNode<T> newNode = new DNode<>(data, null, null);
 
-        if(head.getNext() == null){
-            newNode.setNext(newNode);
-            newNode.setPrevious(newNode);
-            head = newNode;
-        }
-
         DNode<T> t = findNode(target);
         DNode<T> x = t.getNext();
 
@@ -64,12 +58,6 @@ public class CircularDoublyLinkedList<T> implements ICircularDoubleLinkedList<T>
     public void insertPrevious(T target, T data) {
         DNode<T> newNode = new DNode<>(data, null, null);
 
-        if(head.getNext() == null){
-            newNode.setNext(newNode);
-            newNode.setPrevious(newNode);
-            head = newNode;
-        }
-
         DNode<T> t = findNode(target);
         DNode<T> p = t.getPrevious();
 
@@ -82,8 +70,26 @@ public class CircularDoublyLinkedList<T> implements ICircularDoubleLinkedList<T>
         size++;
     }
 
+    public void removeFront(){
+        if(head == null)
+            throw new NullPointerException("List is Empty");
+
+        DNode<T> x = head.getNext();
+
+        x.setPrevious(head.getPrevious());
+        head.getPrevious().setNext(x);
+
+        head = x;
+
+        size--;
+    }
+
     @Override
     public void removeAfter(T target) {
+
+        if(head == null)
+            throw new NullPointerException("List is Empty");
+
         DNode<T> t = findNode(target);
         DNode<T> x = t.getNext();
 
@@ -96,6 +102,10 @@ public class CircularDoublyLinkedList<T> implements ICircularDoubleLinkedList<T>
 
     @Override
     public void removePrevious(T target) {
+
+        if(head == null)
+            throw new NullPointerException("List is Empty");
+
         DNode<T> t = findNode(target);
         DNode<T> p = t.getPrevious();
 
